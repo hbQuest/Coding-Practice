@@ -1,6 +1,0 @@
-    import pygame
-    print("Hello world!")
-
-    def showName:
-        if n in name:
-            print("lala")

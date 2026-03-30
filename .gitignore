@@ -1,11 +1,32 @@
-# --- Ignored Binaries ---
+_minted*/
+_minted-main/
+.vscode/
+appendices/
+backmatter/
+chapters/
+figures/
+fonts/
+frontmatter/
+
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.listing
+*.tex
+*.cls
+*.pygtex
+*.pdf
+
 **/*.exe
 *.exe
 *.o
 *.obj
 *.out
 
-# --- Exceptions ---
 !main.pdf
 !README.md
 !.gitignore
