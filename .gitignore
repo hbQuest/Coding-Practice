@@ -21,6 +21,7 @@ frontmatter/
 *.cls
 
 # --- Ignored Binaries ---
+code/*.exe
 *.exe
 *.o
 *.obj
