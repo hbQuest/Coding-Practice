@@ -1,25 +1,3 @@
-# --- Ignored Folders ---
-_minted*/
-appendices/
-backmatter/
-chapters/
-figures/
-fonts/
-frontmatter/
-.vscode/
-
-# --- Ignored Files ---
-*.aux
-*.log
-*.out
-*.toc
-*.synctex.gz
-*.fdb_latexmk
-*.fls
-*.listing
-*.tex
-*.cls
-
 # --- Ignored Binaries ---
 **/*.exe
 *.exe
@@ -29,8 +7,5 @@ frontmatter/
 
 # --- Exceptions ---
 !main.pdf
-!code/
 !README.md
 !.gitignore
-
-!code/**

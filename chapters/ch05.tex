@@ -1,0 +1,613 @@
+%!TEX root = ../main.tex
+
+\chapter{Mảng Một Chiều}
+\hypertarget{localtoc\thechapter}{}
+\localtoc
+
+\begin{problem}
+    Tìm giá trị lớn nhất trong mảng một chiều các số thực.
+\end{problem}
+\begin{problem}
+    Viết hàm tìm một vị trí mà giá trị tại vị trí đó là một giá trị nhỏ nhất trong mảng một chiều các số nguyên.
+\end{problem}
+\begin{problem}
+    Viết hàm kiểm tra trong mảng các số nguyên có tồn tại giá trị chẵn nhỏ hơn 2004 hay không?
+\end{problem}
+\begin{problem}
+    Viết hàm đếm số lượng số nguyên tố nhỏ hơn 100 trong mảng.
+\end{problem}
+\begin{problem}
+    Viết hàm tính tổng các giá trị âm trong mảng một chiều các số thực.
+\end{problem}
+\begin{problem}
+    Viết hàm sắp xếp mảng một chiều các số thực tăng dần.
+\end{problem}
+
+
+\section{Kĩ thuật nhập xuất mảng}
+\begin{problem}
+    Viết hàm nhập mảng một chiều các số thực.
+\end{problem}
+\begin{problem}
+    Viết hàm nhập mảng một chiều các số nguyên.
+\end{problem}
+\begin{problem}
+    Viết hàm xuất mảng một chiều các số thực.
+\end{problem}
+\begin{problem}
+    Viết hàm xuất mảng một chiều các số nguyên.
+\end{problem}
+\begin{problem}
+    Viết hàm liệt kê các giá trị chẵn trong mảng một chiều các số nguyên.
+\end{problem}
+\begin{problem}
+    Viết hàm liệt kê các vị trí mà giá trị tại đó là giá trị âm trong mảng một chiều các số thực.
+\end{problem}
+
+\section{Kỹ thuật đặt lính canh}
+\begin{problem}
+    Viết hàm tìm “giá trị lớn nhất” trong mảng một chiều số thực (lonnhat).
+\end{problem}
+\begin{problem}
+    Tìm “giá trị dương đầu tiên” trong mảng một chiều các số thực (duongdau). Nếu mảng không có giá trị dương thì trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Tìm “số chẵn cuối cùng” trong mảng một chiều các số nguyên (chancuoi). Nếu mảng không có giá trị chẵn thì trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Tìm “một vị trí mà giá trị tại vị trí đó là giá trị nhỏ nhất” trong mảng một chiều các số thực (vitrinhonhat).
+\end{problem}
+\begin{problem}
+    Tìm “vị trí của giá trị chẵn đầu tiên” trong mảng một chiều các số nguyên (vitrichandau). Nếu mảng không có giá trị chẵn thì hàm sẽ trả về giá trị là -1.
+\end{problem}
+\begin{problem}
+    Tìm “vị trí số hoàn thiện cuối cùng” trong mảng một chiều các số nguyên (vitrihoanthiencuoi). Nếu mảng không có số hoàn thiện thì trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Hãy tìm “giá trị dương nhỏ nhất” trong mảng các số thực  (duongnhonhat). Nếu mảng không có giá trị dương thì trả về giá trị không dương là -1.
+\end{problem}
+\begin{problem}
+    Hãy tìm “vị trí giá trị dương nhỏ nhất” trong mảng một chiều các số thực (vtduongnhonhat). Nếu mảng không có giá trị dương thì trả về một giá trị ngoài đoạn $[0,n-1]$ là -1 nhằm mô tả không có vị trí nào thỏa điều kiện.
+\end{problem}
+
+
+\section{Bài tập luyện tập tư duy}
+
+\begin{problem}
+    Tìm “giá trị nhỏ nhất” trong mảng một chiều số thực (nhonhat).
+\end{problem}
+\begin{problem}
+    Viết hàm tìm “số chẵn đầu tiên” trong mảng các số nguyên (chandau). Nếu mảng không có giá trị chẵn thì hàm sẽ trả về giá trị không chẵn là -1.
+\end{problem}
+\begin{problem}
+    Tìm “số nguyên tố đầu tiên” trong mảng một chiều các số nguyên (nguyentodau). Nếu mảng không có số nguyên tố thì trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Tìm “số hoàn thiện đầu tiên” trong mảng một chiều các số nguyên (hoanthiendau). Nếu mảng không có số hoàn thiện thì trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Tìm giá trị âm đầu tiên trong mảng một chiều các sô thực (amdau). Nếu mảng không có giá trị âm thì trả về giá trị không âm là giá trị 1.
+\end{problem}
+\begin{problem}
+    Tìm “số dương cuối cùng” trong mảng số thực (duongcuoi). Nếu mảng không có giá trị dương thì trả về giá trị - 1.
+\end{problem}
+\begin{problem}
+    Tìm “số nguyên tố cuối cùng” trong mảng một chiều các số nguyên (nguyentocuoi). Nếu mảng không có số nguyên tố thì trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Tìm “số hoàn thiện cuối cùng” trong mảng một chiều các số nguyên (hoanthiencuoi). Nếu mảng không có số hoàn thiện thì hàm sẽ trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Hãy tìm “giá trị âm lớn nhất” trong mảng các số thực (amlonnhat). Nếu mảng không có giá trị âm thì trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Hãy tìm “số nguyên tố lớn nhất” trong mảng một chiều các số nguyên (nguyentolonnhat). Nếu mảng không có số nguyên tố thì trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Hãy tìm “hoàn thiện nhỏ nhất” trong mảng một chiều các số nguyên (hoanthiennhonhat). Nếu mảng không có số hoàn thiện thì trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Hãy tìm “giá trị chẵn nhỏ nhất” trong mảng một chiều các số nguyên (channhonhat). Nếu mảng không có giá trị chẵn thì trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Hãy tìm “vị trí giá trị âm lớn nhất” trong mảng các số thực (vtamlonnhat). Nếu mảng không có giá trị âm thì trả về -1.
+\end{problem}
+\begin{problem}
+    Hãy tìm giá trị trong mảng các sô thực “xa giá trị x nhất” (xanhat). Ví dụ: 24 45 23 13 43 -12 Giá trị x = 15 Khoảng cách từ x = 15 tới các phần tử khác trong mảng là: 9 30 8 2 28 27. Giá trị trong mảng xa giá trị x nhất: 45
+\end{problem}
+\begin{problem}
+    Hãy tìm một vị trí trong mảng một chiều các số thực mà giá trị tại vị trí đó là giá trị “gần giá trị x nhất”. Ví dụ: 24 45 23 13 43 -12 Giá trị x = 15 Khoảng cách từ x = 15 tới các phần tử khác trong mảng là: 9 30 8 2 28 27. Giá trị trong mảng gần giá trị x nhất: 13
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số thực, hãy tìm đoạn [a,b] sao cho đoạn này chứa tất cả các giá trị trong mảng (timdoan).
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số thực, hãy tìm giá trị x sao cho đoạn [-x,x] chứa tất cả các giá trị trong mảng (timx).
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số thực hãy tìm giá trị đầu tiên lớn hơn giá trị 2003 (dautien). Nếu mảng không có giá trị thỏa điều kiện trên thì hàm trả về giá trị là -1.
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số thực, hãy viết hàm tìm giá trị âm cuối cùng lớn hơn giá trị -1 (cuoicung). Nếu mảng không có giá trị thỏa điều kiện trên thì hàm trả về giá trị -1.
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số nguyên, hãy tìm giá trị đầu tiên trong mảng nằm trong khoảng (x,y) cho trước (dautientrongdoan). Nếu mảng không có giá trị thỏa điều kiện trên thì hàm trả về giá trị là -1.
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số thực. Hãy viết hàm tìm một vị trí trong mảng thỏa hai điền kiện: có hai giá trị lân cận và giá trị tại vị trí đó bằng tích hai giá trị lân cận. Nếu mảng không tồn tại giá trị như vậy thì hàm trả về giá trị - 1.
+\end{problem}
+\begin{problem}
+    Tìm số chính phương đầu tiên trong mảng một chiều các số nguyên.
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số nguyên, hãy viết hàm tìm giá trị đầu tiên trong mảng thỏa tính chất số gánh. (ví dụ giá trị 12321).
+\end{problem}
+\begin{problem}
+    Hãy tìm giá trị đầu tiên trong mảng một chiều các số nguyên có chữ số đầu tiên là chữ số lẻ (dauledautien). Nếu trong mảng không tồn tại giá trị như vậy thì hàm sẽ trả về giá trị 0.
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số nguyên. Hãy viết hàm tìm giá trị đầu tiên trong mảng có dạng 2k .Nếu mảng không tồn tại giá trị dạng 2k thì hàm sẽ trả về giá trị 0.
+\end{problem}
+\begin{problem}
+    Hãy tìm giá trị thỏa điều kiện toàn chữ số lẻ và là giá trị lớn nhất thỏa điều kiện ấy trong mảng một chiều các số nguyên (nếu mảng không có giá trị thỏa điều kiện trên thì hàm trả về giá trị 0).
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số nguyên. Hãy viết hàm tìm giá trị lớn nhất trong mảng có dạng 5k . Nếu mảng không tồn tại giá trị dạng 5k thì hàm sẽ trả về giá trị 0.
+\end{problem}
+\begin{problem}
+    (*) Cho mảng một chiều các số nguyên. Hãy viết hàm tìm số chẵn lớn nhất nhỏ hơn mọi giá trị lẻ có trong mảng.
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số nguyên. Hãy viết hàm tìm số nguyên tố nhỏ nhất và lớn hơn mọi giá trị có trong mảng.
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số nguyên dương. Hãy viết hàm tìm ước chung lớn nhất của tất cả các phần tử trong mảng.
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số nguyên dương. Hãy viết hàm tìm bội chung nhỏ nhất của tất cả các phần tử trong mảng.
+\end{problem}
+\begin{problem}
+    (*) Cho mảng một chiều các số nguyên. Hãy viết hàm tìm chữ số xuất hiện ít nhất trong mảng (timchuso).
+\end{problem}
+\begin{problem}
+    (*) Cho mảng số thực có nhiều hơn hai giá trị và các giá trị trong mảng khác nhau từng đôi một. Hãy viết hàm liệt kê tất cả các cặp giá trị (a,b) trong mảng thỏa điều kiện a <= b.
+\end{problem}
+\begin{problem}
+    (*) Cho mảng số thực có nhiều hơn hai giá trị và các giá trị trong mảng khác nhau từng đôi một. Hãy viết hàm tìm hai giá trị gần nhau nhất trong mảng (gannhaunhat). Lưu ý: Mảng có các giá trị khác nhau từng đôi một còn có tên là mảng phân biệt.
+\end{problem}
+
+\section{Các bài tập tìm kiếm và liệt kê}
+
+\begin{problem}
+    Hãy liệt kê các số âm trong mảng một chiều các số thực (lietkeam).
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các số giá trị trong mảng một chiều các sô thực thuộc đoạn [x,y] cho trước.
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các số có giá trị chẵn trong mảng một chiều các số nguyên thuộc đoạn [x,y] cho trước (x, y là các số nguyên).
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các giá trị trong mảng mà thỏa điều kiện lớn hơn trị tuyệt đối của giá trị đứng liền sau nó.
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các giá trị trong mảng mà thỏa điều kiện nhỏ hơn trị tuyệt đối của giá trị đứng liền sau nó và lớn hơn giá trị đứng liền trước nó.
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số nguyên. Hãy viết hàm liệt kê các giá trị chẵn có ít nhất một lân cận cũng là giá trị chẵn.
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số thực. Hãy viết hàm liệt kê tất cả các giá trị trong mảng có ít nhất một lân cận trái dấu với nó.
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các vị trí mà giá trị tại đó là giá trị lớn nhất trong mảng một chiều các số thực (lietkevitrilonnhat).
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các vị trí mà giá trị tại đó là số nguyên tố trong mảng một chiều các số nguyên (lkvitringuyento).
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các vị trí mà giá trị tại vị trí đó là số chính phương trong mảng một chiều các số nguyên.
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các vị trí trong mảng một chiều các số thực mà giá trị tại vị trí đó bằng giá trị âm đầu tiên trong mảng.
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các vị trí mà giá trị tại các vị trí đó bằng giá trị dương nhỏ nhất trong mảng một chiều các số thực.
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các vị trí chẵn lớn nhất trong mảng một chiều các số nguyên.
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các giá trị trong mảng một chiều các số nguyên tố có chữ số đầu tiên là chữ số lẻ (lietketdaule).
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các giá trị có toàn chữ số lẻ trong mảng một chiều các số nguyên.
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các giá trị cực đại trong mảng một chiều các số thực. một phần tử được gọi là cực đại khi lớn hơn các phần tử lân cận.
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các giá trị trong mảng một chiều các số nguyên có chữ số đầu tiền là chữ số chẵn (liekedauchan).
+\end{problem}
+\begin{problem}
+    Cho mảng một chiều các số nguyên. Hãy viết hàm liệt kê các giá trị trong mảng có dạng 3k. Nếu mảng không có giá trị đó thì trả về 0.
+\end{problem}
+\begin{problem}
+    Cho mảng số nguyên có nhiều hơn hai giá trị. Hãy liệt kê tất cả các cặp giá trị gần nhau nhất trong mảng (gannhaunhat).
+\end{problem}
+\begin{problem}
+    Cho mảng số thực có nhiều hơn ba giá trị và các giá trị trong mảng khác nhau từng đôi một. Hãy liệt kê tất cả các bộ ba giá trị (a,b,c) thỏa điều kiện a = b + c với a, b, c là ba giá trị khác nhau trong mảng. Ví dụ: (6, 2, 4).
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các số âm trong mảng một chiều các số thực (lietkeam).
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các giá trị trong mảng các số nguyên có chữ số đầu tiên là chữ số lẻ (lietkele).
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các vị trí mà giá trị tại đó là giá trị lớn nhất trong mảng một chiều các số thực (lietkevitrilonnhat).
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các vị trí mà giá trị đó là số nguyên tố trong mảng một chiều các số nguyên (lkvitringuyento).
+\end{problem}
+
+
+\section{Kỹ thuật tính tổng}
+
+\begin{problem}
+    Tính tổng các phần tử trong mảng
+\end{problem}
+\begin{problem}
+    Tính tổng các giá trị dương trong mảng 1 chiều các số thực
+\end{problem}
+\begin{problem}
+    Tính tổng các giá trị có chữ số đầu tiên là chữ số lẻ trong mảng 1 chiều các số nguyên
+\end{problem}
+\begin{problem}
+    Tinh tổng các chữ số có chữ số hàng chục là 5 trong mảng 1 chiều các số nguyên
+\end{problem}
+\begin{problem}
+    Tính tổng các giá trị lớn hơn giá trị đứng liền trước nó trong mảng 1 chiều các số thực
+\end{problem}
+\begin{problem}
+    Tính tổng các giá trị lớn hơn trị tuyệt đối của giá trị đứng liền sau nó trong mảng 1 chiều các số thực
+\end{problem}
+\begin{problem}
+    Tính tổng các giá trị lớn hơn các giá trị xung quanh trong mảng 1 chiều các số thực  Lưu ý: Một giá trị trong mảng có tối đa 2 giá trị xung quang
+\end{problem}
+\begin{problem}
+    Tính tổng các phần tử “cực trị” trong mảng. Một phần tử được gọi là cực trị khi nó lớn hơn hoặc nhỏ hơn các phần tử xung quanh nó
+\end{problem}
+\begin{problem}
+    Tính tổng các giá trị chính phương trong mảng 1 chiều các số nguyên
+\end{problem}
+\begin{problem}
+    Tính tổng các giá trị đối xứng trong mảng các số nguyên
+\end{problem}
+\begin{problem}
+    Tính tổng các giá trị có chữ số đầu tiên là chữ số chẵn trong mảng các số nguyên
+\end{problem}
+\begin{problem}
+    Tính trung bình cộng các số nguyên tố trong mảng 1 chiều các số nguyên
+\end{problem}
+\begin{problem}
+    Tính trung bình cộng các số dương trong mảng 1 chiều các số thực
+\end{problem}
+\begin{problem}
+    Tính trung bình cộng các giá trị lớn hơn giá trị x trong mảng 1 chiều các số thực
+\end{problem}
+\begin{problem}
+    Tính trung bình nhân các giá trị dương có trong mảng 1 chiều các số thực
+\end{problem}
+\begin{problem}
+    (*): Tính khoảng cách trung bình giữa các giá trị trong mảng
+\end{problem}
+
+\section{Kỹ thuật đếm}
+
+\begin{problem}
+    Đếm số lượng số chẵn trong mảng
+\end{problem}
+\begin{problem}
+    Đếm số dương chia hết cho 7 trong mảng
+\end{problem}
+\begin{problem}
+    Đếm số đối xứng trong mảng
+\end{problem}
+\begin{problem}
+    Đếm số lần xuất hiện của giá trị x trong mảng
+\end{problem}
+\begin{problem}
+    Đếm số lượng giá trị tận cùng bằng 5 trong mảng
+\end{problem}
+\begin{problem}
+    Cho biết sự tương quan giữa số lượng chẵn và lẻ trong mảng. Hàm trả về 1 trong 3 giá trị -1, 0, 1. Giá trị -1 là chẵn nhiều hơn lẻ. Giá trị 0 là chẵn bằng lẻ. Giá trị 1 là chẵn ít hơn lẻ
+\end{problem}
+\begin{problem}
+    Đếm phần tử lớn hơn hay nhỏ hơn phần tử xung quanh mảng
+\end{problem}
+\begin{problem}
+    Đếm số nguyên tố trong mảng
+\end{problem}
+\begin{problem}
+    Đếm số hoàn thiện trong mảng
+\end{problem}
+\begin{problem}
+    Đếm số lượng giá trị lớn nhất có trong mảng
+\end{problem}
+\begin{problem}
+    Hãy xác định số lượng phần tử kề nhau mà cả 2 đều chẵn
+\end{problem}
+\begin{problem}
+    Hãy xác định số lượng phần tử kề nhau mà cả 2 trái dấu
+\end{problem}
+\begin{problem}
+    Hãy xác định số lượng phần tử kề nhau mà số đứng sau cùng dấu số đứng trước và có giá trị tuyệt đối lớn hơn
+\end{problem}
+\begin{problem}
+    Đếm số lượng các giá trị phân biệt có trong mảng
+\end{problem}
+\begin{problem}
+    Liệt kê tần suất xuất hiện các giá trị trong mảng (mỗi giá trị liệt kê 1 lần)
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các giá trị xuất hiện trong mảng 1 chiều các số nguyên đúng 1 lần
+\end{problem}
+\begin{problem}
+    Hãy liệt kê các giá trị xuất hiện trong dãy quá 1 lần. Lưu ý: mỗi giá trị liệt kê 1 lần
+\end{problem}
+\begin{problem}
+    Hãy liệt kê tần suất của các giá trị xuất hiện trong dãy. Lưu ý: mỗi giá trị liệt kê tần suất 1 lần
+\end{problem}
+\begin{problem}
+    Cho 2 mảng a, b. Đếm số lượng giá trị chỉ xuất hiện 1 trong 2 mảng
+\end{problem}
+\begin{problem}
+    Cho 2 mảng a, b. Liệt kê các giá trị chỉ xuất hiện 1 trong 2 mảng
+\end{problem}
+\begin{problem}
+    (*): Cho 2 mảng a, b. Hãy cho biết số lần xuất hiện của mảng a trong mảng b A: 1 2 3  B:  1 3 5 1 2 3 8 1 2 3 7 6
+\end{problem}
+\begin{problem}
+    (*): Hãy liệt kê các giá trị có số lần xuất hiện nhiều nhất trong mảng
+\end{problem}
+\begin{problem}
+    Hãy đếm số lượng số nguyên tố phân biệt trong mảng
+\end{problem}
+\begin{problem}
+    Kiểm tra mảng có giá trị 0 hay không? Có trả về 1, không có trả về 0
+\end{problem}
+\begin{problem}
+    Kiểm tra mảng có 2 giá trị 0 liên tiếp hay không? Có trả về 1, không có trả về 0
+\end{problem}
+\begin{problem}
+    Kiểm tra mảng có số chẵn hay không? Có trả về 1, không có trả về 0
+\end{problem}
+\begin{problem}
+    Kiểm tra mảng có số nguyên tố hay không? Có trả về 1, không có trả về 0
+\end{problem}
+\begin{problem}
+    Kiểm tra mảng thỏa tính chất: mảng không có số hoàn thiện lớn hơn 256. Có trả về 1, không có trả về 0
+\end{problem}
+\begin{problem}
+    Kiểm tra mảng có toàn số chẵn không? Có trả về 1, không có trả về 0
+\end{problem}
+\begin{problem}
+    Kiểm tra mảng có đối xứng không? Có trả về 1, không có trả về 0
+\end{problem}
+\begin{problem}
+    Ta định nghĩa 1 mảng có tính chất lẻ, khi tổng của 2 phần tử liên tiếp luôn là lẻ. Kiểm tra mảng có tính chất lẻ hay không
+\end{problem}
+\begin{problem}
+    Kiểm tra mảng có tăng dần hay không
+\end{problem}
+\begin{problem}
+    Kiểm tra mảng có giảm dần hay không
+\end{problem}
+\begin{problem}
+    Hãy cho biết các phần tử trong mảng có lập thành cấp số cộng hay không? Nếu có chỉ ra công sai d
+\end{problem}
+\begin{problem}
+    Hãy cho biết các phần tử trong mảng có bằng nhau không
+\end{problem}
+\begin{problem}
+    Ta định nghĩa 1 mảng được gọi là dạng song, khi phần tử có trị số I lớn hơn hoặc nhỏ hơn 2 phần tử xung quanh. Hãy viết hàm kiểm tra mảng có dạng sóng không
+\end{problem}
+\begin{problem}
+    Hãy cho biết tất cả các phần tử trong mảng a có nằm trong mảng b không
+\end{problem}
+\begin{problem}
+    Hãy đếm giá trị trong mảng thỏa: lớn hơn tất cả các giá trị đứng đằng trước nó
+\end{problem}
+
+\section{Kỹ thuật sắp xếp}
+
+\begin{problem}
+    Sắp xếp mảng tăng dần 4 6 2 8 1 2 9 1 2 2 4 6 8 9
+\end{problem}
+\begin{problem}
+    Sắp xếp mảng giảm dần
+\end{problem}
+\begin{problem}
+    Sắp xếp lẻ tăng dần nhưng giá trị khác giữ nguyên vị trí
+\end{problem}
+\begin{problem}
+    Sắp xếp số nguyên tố tăng dần nhưng giá trị khác giữ nguyên vị trí
+\end{problem}
+\begin{problem}
+    Sắp xếp số hoàn thiện giảm dần nhưng giá trị khác giữ nguyên vị trí
+\end{problem}
+\begin{problem}
+    Cho 2 mảng a, b. Hãy cho biết mảng b có phải là hoán vị của mảng a không
+\end{problem}
+\begin{problem}
+    Sắp xếp số dương tăng dần, các số âm giữ nguyên vị trí
+\end{problem}
+\begin{problem}
+    Sắp xếp chẵn, lẻ tăng dần nhưng vị trí tương đối giữa các số không thay đổi
+\end{problem}
+\begin{problem}
+    Sắp xếp số dương tăng dần, âm giảm dần. Vị trí tương đối không thay đổi
+\end{problem}
+\begin{problem}
+    Trộn 2 mảng đã tăng thành 1 mảng được sắp xếp tăng A : 2 7 9 B: 1 2 8 10 12 => 1 2 2 7 8 9 10 12
+\end{problem}
+\begin{problem}
+    Cho 2 mảng tăng. Hãy trộn thành 1 mảng giảm dần
+\end{problem}
+
+\section{Kỹ thuật thêm}
+
+\begin{problem}
+    Thêm 1 phần tử x vào mảng tại vị trí k
+    
+    1 2 8 4 5 6
+    
+    X = 10  k = 3
+    
+    1 2 8 10 4 5 6
+\end{problem}
+
+\begin{problem}
+    Viết hàm nhập mảng sao cho khi nhập xong thì giá trị trong mảng sắp xếp giảm dần
+\end{problem}
+
+\begin{problem}
+    Thêm x vào trong mảng tăng nhưng vẫn giữ nguyên tính tăng của mảng
+\end{problem}
+
+\begin{problem}
+    Nhập mảng sau khi nhập xong đã tự sắp xếp tăng dần
+\end{problem}
+
+\section{Kỹ thuật xoá} 
+\begin{problem}
+    Xóa phần tử có chỉ số k trong mảng
+\end{problem}
+\begin{problem}
+    Hãy xóa tất cả số lớn nhất trong mảng các số thực
+\end{problem}
+\begin{problem}
+    Xóa tất cả các số âm trong mảng
+\end{problem}
+\begin{problem}
+    Xóa tất cả các số chẵn trong mảng
+\end{problem}
+\begin{problem}
+    Xóa tất cả các số chính phương trong mảng
+\end{problem}
+\begin{problem}
+    Xóa tất cả các phần tử trùng với x
+\end{problem}
+\begin{problem}
+    Xóa tất cả các số nguyên tố trong mảng
+\end{problem}
+\begin{problem}
+    Xóa tất cả các phần tử trùng nhau trong mảng và chỉ giữ lại duy nhất 1 phần tử
+\end{problem}
+\begin{problem}
+    Xóa tất cả các phần tử xuất hiện nhiều hơn 1 lần trong mảng
+\end{problem}
+
+\section{Kỹ thuật xử lí mảng}
+\begin{problem}
+    Hãy đưa số 1 về đầu mảng
+\end{problem}
+\begin{problem}
+    Hãy đưa chẵn về đầu, lẻ về cuối, phần tử 0 nằm giữa mảng
+\end{problem}
+\begin{problem}
+    Đưa các số chia hết cho 3 về đầu mảng
+\end{problem}
+\begin{problem}
+    Đảo ngược mảng ban đầu
+\end{problem}
+\begin{problem}
+    Đảo ngược thứ tự các số chẵn trong mảng
+\end{problem}
+\begin{problem}
+    Đảo ngược thứ tự số dương trong mảng
+\end{problem}
+\begin{problem}
+    Dịch trái xoay vòng k phần tử trong mảng
+\end{problem}
+\begin{problem}
+    Dịch phải xoay vòng k phần tử trong mảng
+\end{problem}
+\begin{problem}
+    Hãy xuất phần tử trong mảng theo yêu cầu: chẵn vàng, lẻ trắng
+\end{problem}
+\begin{problem}
+    Xuất mảng: chẵn nằm trên 1 mảng, lẻ nằm trên hàng tiếp theo
+\end{problem}
+\begin{problem}
+    Đảo ngược thứ tự số chẵn và lẻ trong mảng nhưng giữ vị trí tương đối
+\end{problem}
+\begin{problem}
+    Biến đổi mảng bằng cách thay giá trị max = giá trị min và ngược lại
+\end{problem}
+\begin{problem}
+    Biến đổi mảng  số thực bằng cách thay tất cả phần tử trong mảng bằng số nguyên gần nó nhất (giống làm tròn)
+\end{problem}
+
+
+
+\section{Kỹ thuật xử lí mảng con}
+\begin{problem}
+    Liệt kê tất cả các mảng con
+\end{problem}
+\begin{problem}
+    Liệt kê mảng con có độ dài lớn hơn 2 phần tử
+\end{problem}
+\begin{problem}
+    Liệt kê dãy con tăng dần
+\end{problem}
+\begin{problem}
+    Liệt kê dãy con tăng và chứa giá trị lớn nhất
+\end{problem}
+\begin{problem}
+    Tính tổng từng mảng con tăng
+\end{problem}
+\begin{problem}
+    Đếm mảng con tăng có độ dài lớn hơn 1: 5 2 3 5 8 6 1 7 9 3
+\end{problem}
+\begin{problem}
+    Liệt kê dãy con toàn dương và có độ dài lớn hơn 1
+\end{problem}
+\begin{problem}
+    Đếm mảng con giảm
+\end{problem}
+\begin{problem}
+    Cho biết mảng a có phải là mảng con của mảng b không
+\end{problem}
+\begin{problem}
+    Đếm số lần xuất hiện của mảng a trong mảng b
+\end{problem}
+\begin{problem}
+    Tìm dãy con toàn dương dài nhất
+\end{problem}
+\begin{problem}
+    Cho mảng a, số nguyên M. Tìm 1 mảng con sao cho tổng các phần tử bằng M
+\end{problem}
+\begin{problem}
+    Tìm dãy con toàn dương có tổng lớn nhất
+\end{problem}
+\begin{problem}
+    Tìm mảng con có tổng lớn nhất
+\end{problem}
+
+
+\section{Kỹ thuật xây dựng mảng}
+\begin{problem}
+    Tạo mảng b chỉ chứa giá trị lẻ từ mảng a
+\end{problem}
+\begin{problem}
+    Tạo mảng b chỉ chứa giá trị âm từ mảng a
+\end{problem}
+\begin{problem}
+    Tạo mảng b sao cho b[i] = tổng các phần tử lân cận với a[i] trong mảng a
+\end{problem}
+\begin{problem}
+    Tạo mảng b chỉ chứa số nguyên tố từ mảng a
+\end{problem}
+
