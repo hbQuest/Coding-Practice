@@ -1,4 +1,4 @@
-# --- Ignored Folders (LaTeX structure) ---
+# --- Ignored Folders ---
 _minted*/
 appendices/
 backmatter/
@@ -8,7 +8,7 @@ fonts/
 frontmatter/
 .vscode/
 
-# --- Ignored Files (LaTeX auxiliary) ---
+# --- Ignored Files ---
 *.aux
 *.log
 *.out
@@ -20,11 +20,16 @@ frontmatter/
 *.tex
 *.cls
 
-# --- Exceptions (Những thứ MUỐN giữ lại) ---
+# --- Ignored Binaries ---
+*.exe
+*.o
+*.obj
+*.out
+
+# --- Exceptions ---
 !main.pdf
 !code/
 !README.md
 !.gitignore
 
-# Cho phép mọi thứ bên trong thư mục code (file .cpp, .h, ...)
 !code/**
