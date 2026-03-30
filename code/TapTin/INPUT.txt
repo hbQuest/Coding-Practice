@@ -1,0 +1,7 @@
+6
+123|abc|7
+456|abc|8
+783|abc|6
+sd4|abc|9
+g23|abc|5
+nh5|abc|9
