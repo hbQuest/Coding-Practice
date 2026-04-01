@@ -221,28 +221,28 @@ int  DemSoLanMangAXuatHienTrongMangB(int a[], int b[], int n, int m) {
 void  TimDayConToanDuongDaiNhat(int a[], int n) {
     int day[n];
     int maxChieuDai = 0;
+    int chieuDaiHienTai = 0;
+    int batDau = 0;
     for (int i = 0; i < n; i++) {
-        for (int j = i; j < n; j++) {
-            if (a[j] <= 0) {
-                break;
-            } else {
-                int dem = 0;
-                for (int k = i; k <= j; k++) {
-                    dem++;
-                }
-                if (dem > maxChieuDai) {
-                    maxChieuDai = dem;
-                    int index = 0;
-                    for (int k = i; k <= j; k++) {
-                        day[index++] = a[k];
-                    }
-                }
+        if (a[i] > 0) {
+            chieuDaiHienTai++;
+            if (chieuDaiHienTai > maxChieuDai) {
+                maxChieuDai = chieuDaiHienTai;
+                batDau = i - maxChieuDai + 1;
             }
+        } else {
+            chieuDaiHienTai = 0;
         }
+        
     }
-    printf("Day con toan duong dai nhat la: ");
-    for (int i = 0; i < maxChieuDai; i++) {
-        printf("%d ", day[i]);
+
+    if (maxChieuDai == 0) {
+        printf("Khong co day con toan duong\n");
+    } else {
+        printf("Day con toan duong dai nhat la: ");
+        for (int i = batDau; i < maxChieuDai+batDau; i++) {
+            printf("%d ", day[i]);
+        }
     }
     printf("\n");
 }

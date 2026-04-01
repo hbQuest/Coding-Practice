@@ -43,6 +43,17 @@ bool kiemTraMangCoTinhChatLe(int a[], int n) {
     return true;
 }
 
+// 5.6.32
+bool KiemTraMangTangDan(int a[], int n) {
+    if (n == 1) {return true;}
+    for (int i = 1; i < n; i++) {
+        if (a[i] < a[i-1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
 // 5.6.34
 bool kiemTraCapSoCong(int a[], int n, int &d) {
     if (n <= 1) {

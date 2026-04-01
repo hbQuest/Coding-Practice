@@ -80,7 +80,7 @@ int main() {
     xuat(a,dong,cot);
 
     // Thêm yêu cầu sắp xếp số dương tăng dần rồi đến số âm giảm dần theo thứ tự (khác với giữ nguyên vị trí các số trong ma trận) => ta sắp số âm trước thì nó sẽ tự động dồn về sau, sau đó xếp số dương hoặc ngươc lại nhưng điều kiện xét sẽ khác
-    printf("Xuat cac gia tri am giam dan ma vi tri khong thay doi:\n");
+    printf("Xuat cac gia tri am giam dan duong tang dan:\n");
     xuatGiaTriAmGiamDan(a,dong,cot);
     xuat(a,dong,cot);
 
