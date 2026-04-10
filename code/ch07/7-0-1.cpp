@@ -1,57 +1,56 @@
 #include <stdio.h>
 #include <math.h>
-#define MAX 100
 
-void nhap(int a[][MAX], int& n) {
+void nhap(int a[][100], int&n) {
     do {
-        printf("Nhap n: ");
+        printf("Nhap so dong va cot: ");
         scanf("%d", &n);
-        if (n < 0 || n > MAX) {
-            printf("So n khong hop le! Xin nhap lai!");
+        if (n < 1 || n > 100) {
+            printf("So dong/cot khong hop le! Xin nhap lai!");
         }
-    } while (n < 0 || n > MAX);
+    } while(n < 1 || n > 100);
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            printf("Nhap a[%d][%d]: ", i,j);
+            printf("Nhap a[%d][%d]: ", i, j);
             scanf("%d", &a[i][j]);
         }
     }
 }
 
-void xuat(int a[][MAX], int n) {
+void xuat(int a[][100], int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            printf("%4d", a[i][j]);
+            printf("%d  ", a[i][j]);
         }
         printf("\n");
     }
 }
 
-void duyetCheoChinh(int a[][MAX], int n) {
+void duyetCheoChinh(int a[][100], int n) {
     for (int i = 0; i < n; i++) {
         printf("%4d", a[i][i]);
     }
     printf("\n");
 }
 
-void duyetCheoPhu(int a[][MAX], int n) {
+void duyetCheoPhu(int a[][100], int n) {
     for (int i = 0; i < n; i++) {
         printf("%4d", a[i][n-i-1]);
     }
     printf("\n");
 }
-
-void duyetTamGiacTrenCheoChinh(int a[][MAX], int n) {
-    for (int i = 0; i < n-1; i++) {
-        for (int j = i; j < n-1; j++) {
+//Duyệt tam giác TRÊN đường chéo chính (j > i)
+void duyetTamGiacTrenCheoChinh(int a[][100], int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = i+1; j < n; j++) {
             printf("%4d", a[i][j]);
         }
     }
     printf("\n");
 }
-
-void duyetTamGiacDuoiCheoChinh(int a[][MAX], int n) {
+//Duyệt tam giác DƯỚI đường chéo chính (j < i)
+void duyetTamGiacDuoiCheoChinh(int a[][100], int n) {
     for (int i = 1; i < n; i++) {
         for (int j = 0; j <= i-1; j++) {
             printf("%4d", a[i][j]);
@@ -59,8 +58,8 @@ void duyetTamGiacDuoiCheoChinh(int a[][MAX], int n) {
     }
     printf("\n");
 }
-
-void duyetTamGiacTrenCheoPhu(int a[][MAX], int n) {
+//Duyệt tam giác TRÊN đường chéo phụ (i + j < n - 1)
+void duyetTamGiacTrenCheoPhu(int a[][100], int n) {
     for (int i = 0; i < n-1; i++) {
         for (int j = 0; j < n-i-1; j++) {
             printf("%4d", a[i][j]);
@@ -68,8 +67,8 @@ void duyetTamGiacTrenCheoPhu(int a[][MAX], int n) {
     }
     printf("\n");
 }
- 
-void duyetTamGiacDuoiCheoPhu(int a[][MAX], int n) {
+ //Duyệt tam giác DƯỚI đường chéo phụ (i + j > n - 1)
+void duyetTamGiacDuoiCheoPhu(int a[][100], int n) {
     for (int i = 1; i < n; i++) {
         for (int j = n-i; j < n; j++) {
             printf("%4d", a[i][j]);
@@ -79,10 +78,12 @@ void duyetTamGiacDuoiCheoPhu(int a[][MAX], int n) {
 }
 
 int main() {
-    int a[MAX][MAX], n;
-
-    nhap(a,n);
-    xuat(a,n);
+    int a[100][100];
+    int n;
+    printf("Nhap ma tran A:\n");
+    nhap(a, n);
+    printf("Xuat ma tran A:\n");
+    xuat(a, n);
 
     printf("Duyet cac phan tu tren duong cheo chinh: ");
     duyetCheoChinh(a,n);

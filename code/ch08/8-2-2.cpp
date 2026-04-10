@@ -6,16 +6,17 @@ struct DaThuc {
     double heSo[50] = {0};
 };
 
-void nhapDaThuc(DaThuc &da) {
+void NhapDaThuc(DaThuc &da) {
     printf("Nhap bac cua da thuc: ");
     scanf("%d", &da.bac);
+    printf("Nhap he so:\n");
     for (int i = 0; i <= da.bac; i++) {
-        printf("Nhap he so bac %d: ", i);;
+        printf("Bac %d: ", i);
         scanf("%lf", &da.heSo[i]);
     }
 }
-    
-void xuatDaThuc(DaThuc da) {
+
+void XuatDaThuc(DaThuc da) {
     bool dauTien = true;
     for (int i = da.bac; i >= 0; i--) {
         if (da.heSo[i] == 0) {
@@ -38,32 +39,33 @@ void xuatDaThuc(DaThuc da) {
         dauTien = false;
     }
     printf("\n");
-}   
+}
 
-DaThuc tinhHieu2DaThuc(DaThuc da1, DaThuc da2) {
+DaThuc TinhTong2DaThuc(DaThuc da1, DaThuc da2) {
     DaThuc da3;
-    int maxBac, minBac; 
+    int maxBac; 
     if (da1.bac >= da2.bac) {
-        int i = 0;
-        while (i <= da2.bac) {
-            da3.heSo[i] = da1.heSo[i] - da2.heSo[i];
-            i++;
-        }
-        for (int j = i; j <= da1.bac; j++) {
-            da3.heSo[j] = da1.heSo[j];
-        }
-        da3.bac = da1.bac;
+        maxBac = da1.bac;
     } else {
-        int i = 0;
-        while (i <= da1.bac) {
-            da3.heSo[i] = da1.heSo[i] - da2.heSo[i];
-            i++;
-        }
-        for (int j = i; j <= da2.bac; j++) {
-            da3.heSo[j] = - da2.heSo[j];
-        }
-        da3.bac = da2.bac;
+        maxBac = da2.bac;
     }
+
+    for (int i = 0; i <= maxBac; i++) {
+        double t1,t2;
+        if (i > da1.bac) {
+            t1 = 0;
+        } else {
+            t1 = da1.heSo[i];
+        }
+        if (i > da2.bac) {
+            t2 = 0;
+        } else {
+            t2 = da2.heSo[i];
+        }
+
+        da3.heSo[i] = t1 + t2;
+    }
+    da3.bac = maxBac;
     return da3;
 }
 
@@ -71,16 +73,13 @@ int main() {
     DaThuc da1;
     DaThuc da2;
 
-    printf("Nhap da thuc 1:\n");
-    nhapDaThuc(da1);
-    xuatDaThuc(da1);
-    printf("Nhap da thuc 2:\n");
-    nhapDaThuc(da2);
-    xuatDaThuc(da2);
+    NhapDaThuc(da1);
+    XuatDaThuc(da1);
+    NhapDaThuc(da2);
+    XuatDaThuc(da2);
 
-    printf("Hieu 2 da thuc la: ");
-    DaThuc da3 = tinhHieu2DaThuc(da1,da2);
-    xuatDaThuc(da3);
-
+    DaThuc da3 = TinhTong2DaThuc(da1,da2);
+    printf("Tong 2 da thuc: ");
+    XuatDaThuc(da3);
     return 0;
 }

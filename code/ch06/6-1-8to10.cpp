@@ -35,7 +35,9 @@ void xuat(int a[][100], int dong, int cot) {
 
 // 6.1.8
 int tinhTongBien(int a[][100],int dong,int cot) {
-
+    if (dong <= 0 || cot <= 0) {
+        return 0;
+    }
     int s = 0;
     for (int i = 0; i < cot; i++) {
         s += a[0][i];
@@ -49,6 +51,21 @@ int tinhTongBien(int a[][100],int dong,int cot) {
             s += a[i][cot-1];
         }
     }
+    return s;
+}
+
+// Cách 2
+int tinhTongBien2(int a[][100],int dong,int cot) {
+
+    int s = 0;
+    for (int i = 0; i < dong; i++) {
+        for (int j = 0; j < cot; j++) {
+                if ( i == 0 || i == dong - 1 || j == 0 || j == cot - 1) {
+                    s += a[i][j];
+                }
+        }
+    }
+    
     return s;
 }
 
@@ -84,13 +101,13 @@ int main() {
     nhap(a, dong, cot);
     xuat(a, dong, cot);
 
-    int s = tinhTongBien(a, dong, cot);
+    int s = tinhTongBien2(a, dong, cot);
     printf("Tong cac gia tri nam tren bien la: %d\n", s);
     
-    double r = TinhTrungNhanSoDuong(a,dong,cot);
-    printf("Trung binh nhan cac so duong la: %.2lf\n", r);
+    // double r = TinhTrungNhanSoDuong(a,dong,cot);
+    // printf("Trung binh nhan cac so duong la: %.2lf\n", r);
 
-    ThayAmBangTriTuyetDoi(a,dong,cot);
-    xuat(a,dong,cot);
+    // ThayAmBangTriTuyetDoi(a,dong,cot);
+    // xuat(a,dong,cot);
     return 0;
 }

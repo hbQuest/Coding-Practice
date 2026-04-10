@@ -1,9 +1,9 @@
 #include <stdio.h>
-#define MAX 50
+#include <math.h>
 
 struct DaThuc {
     int bac;
-    double heSo[MAX] = {0};
+    double heSo[50] = {0};
 };
 
 void nhapDaThuc(DaThuc &da) {
@@ -16,11 +16,32 @@ void nhapDaThuc(DaThuc &da) {
 }
     
 void xuatDaThuc(DaThuc da) {
-    for (int i = 0; i <= da.bac; i++) {
-        printf("%.2lfx^%d", da.heSo[i], i);
-        if (i < da.bac) {
-            printf(" + ");
+    bool soDauTien = true;
+    for (int i = da.bac; i >= 0; i--) {
+        if (da.heSo[i] == 0) {
+            continue;
         }
+        if (!soDauTien && da.heSo[i] > 0) {
+            printf(" + ");
+        } else if (da.heSo[i] < 0) {
+            if (soDauTien) {
+                printf("-");
+            } else {
+                printf(" - ");
+            }
+        }
+        double heSo = fabs(da.heSo[i]);
+        if (i == 0) {
+            printf("%.2lf", heSo);
+        } else if (i == 1) {
+            printf("%.2lf.x", heSo);
+        } else {
+            printf("%.2lf.x^%d", heSo, i);
+        }
+        soDauTien = false;
+    }
+    if (soDauTien) {
+        printf("0");
     }
     printf("\n");
 }   
@@ -30,7 +51,23 @@ DaThuc operator-(DaThuc da1, DaThuc da2) {
     int max = (da1.bac > da2.bac ? da1.bac : da2.bac);
     da3.bac = max;
     for (int i = 0; i <= max; i++) {
-        da3.heSo[i] = da1.heSo[i] - da2.heSo[i];   
+        double h1, h2;
+        if (i <= da1.bac) {
+            h1 = da1.heSo[i];
+        } else {
+            h1 = 0;
+        }
+        if (i <= da2.bac) {
+            h2 = da2.heSo[i];
+        } else {
+            h2 = 0;
+        }
+        da3.heSo[i] = h1 - h2;
+    }
+
+    // Cập nhật lại bậc của da3
+    while (da3.bac > 0 && da3.heSo[da3.bac] == 0) {
+        da3.bac--;
     }
     return da3;
 }
@@ -46,7 +83,7 @@ int main() {
     nhapDaThuc(da2);
     xuatDaThuc(da2);
 
-    printf("Hieu 2 da thuc la: ");
+    printf("Hieu 2 da thuc da1 - da2 = ");
     DaThuc da3 = da1-da2;
     xuatDaThuc(da3);
 

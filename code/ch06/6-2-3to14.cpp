@@ -35,6 +35,9 @@ void xuat(int a[][100], int dong, int cot) {
 
 // 6.2.3
 int demX(int a[][100],int dong,int cot,int x) {
+    if (dong <= 0 || cot <= 0) {
+        return 0;
+    }
     int dem=0;
     for (int i = 0; i < dong; i++) {
         for (int j = 0; j < cot; j++) {
@@ -43,7 +46,6 @@ int demX(int a[][100],int dong,int cot,int x) {
             }
         }
     }
-
     return dem;
 }
 
